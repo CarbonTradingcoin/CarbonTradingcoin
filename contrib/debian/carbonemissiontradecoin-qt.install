@@ -1,0 +1,6 @@
+carbonemissiontradecoin-qt usr/bin
+share/pixmaps/carbonemissiontradecoin32.xpm usr/share/pixmaps
+share/pixmaps/carbonemissiontradecoin16.xpm usr/share/pixmaps
+share/pixmaps/carbonemissiontradecoin128.png usr/share/pixmaps
+debian/carbonemissiontradecoin-qt.desktop usr/share/applications
+debian/carbonemissiontradecoin-qt.protocol usr/share/kde4/services/

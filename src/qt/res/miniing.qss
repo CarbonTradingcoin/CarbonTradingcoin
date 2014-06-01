@@ -1,0 +1,8 @@
+#wMining {
+	background-color: rgb(209,222,231);
+}
+
+#wMining:hover {
+	background-color: rgb(113,189,28);
+}
+

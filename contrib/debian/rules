@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_carbonemissiontradecoin
+#build/carbonemissiontradecoind::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_carbonemissiontradecoin)
+
+DEB_INSTALL_EXAMPLES_carbonemissiontradecoind += debian/examples/*
+DEB_INSTALL_MANPAGES_carbonemissiontradecoind += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix carbonemissiontradecoind
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f carbonemissiontradecoin-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake carbonemissiontradecoin-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_carbonemissiontradecoin
+	src/test_carbonemissiontradecoin
+
+# Ensure wrapper is set executable
+binary-post-install/carbonemissiontradecoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/carbonemissiontradecoind
+binary-post-install/carbonemissiontradecoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/carbonemissiontradecoin-qt

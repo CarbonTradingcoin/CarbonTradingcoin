@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Carbonemissiontradecoin
+Comment=Carbonemissiontradecoin P2P Cryptocurrency
+Comment[fr]=Carbonemissiontradecoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Carbonemissiontradecoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/carbonemissiontradecoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/carbonemissiontradecoin128.png
+MimeType=x-scheme-handler/carbonemissiontradecoin;
+Categories=Office;
